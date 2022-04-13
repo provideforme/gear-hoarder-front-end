@@ -9,7 +9,7 @@ import BigMuffPedal from '../../assets/pedal-4.png'
 // Components
 import PedalCard from '../../components/PedalCard/PedalCard'
 
-const PedalList = (props) => {
+const PedalList = ({pedals, gearImages}) => {
   return (
     <>
       <section className="page-header">
@@ -20,8 +20,13 @@ const PedalList = (props) => {
         <img src={BigMuffPedal} alt="a fx pedal" />
       </section>
       <section className="pedal-card-container">
-        {props.pedals.map((pedal) => (
-          <PedalCard key={pedal.id} pedal={pedal} isCard={true} />
+        {pedals.map((pedal) => (
+          <PedalCard 
+          key={pedal.id} 
+          pedal={pedal} 
+          isCard={true}
+          gearImages={gearImages}  
+          />
         ))}
       </section>
     </>

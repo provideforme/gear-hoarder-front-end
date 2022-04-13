@@ -8,7 +8,7 @@ import AmpJCM from '../../assets/amp-jcmhead.png'
 // Components
 import AmpCard from '../../components/AmpCard/AmpCard'
 
-const AmpList = (props) => {
+const AmpList = ({amps}) => {
   return (
     <>
       <section className="page-header">
@@ -19,7 +19,7 @@ const AmpList = (props) => {
         <img src={AmpCombo} alt="a combo amp" />
       </section>
       <section className="amp-card-container">
-        {props.amps.map((amp) => (
+        {amps.map((amp) => (
           <AmpCard key={amp.id} amp={amp} isCard={true} />
         ))}
       </section>
